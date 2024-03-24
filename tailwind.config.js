@@ -8,7 +8,8 @@ export default {
     extend: {
       colors: {
         'header': 'hsl(10, 79%, 65%)',
-        'main': 'hsl(33, 100%, 98%)',
+        'main': 'hsl(27, 66%, 92%)',
+        'chart-font-color': ' hsl(25, 47%, 15%)'
       }
     },
   },
