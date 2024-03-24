@@ -1,7 +1,7 @@
+import { useEffect, useState } from "react";
 import MyBalance from "./components/MyBalance";
 import Container from "./components/Container";
 import Chart from "./components/Chart";
-import { useEffect, useState } from "react";
 
 export default function App() {
 

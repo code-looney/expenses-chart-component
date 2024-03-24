@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Container from './Container';
 import Title from './Title';
-import Sub from './Sub';
+import Currency from './currency';
 import Logo from './Logo';
 
 const MyBalance = () => {
@@ -11,14 +11,12 @@ const MyBalance = () => {
         <Container className={`w-[340px] flex justify-between items-center text-white `}>
           <Container>
             <Title className={`font-light`}>My balance</Title>
-            <Sub className={`text-[24px] font-medium`}>$921.48</Sub>
-            <p></p>
+            <Currency className={`text-[24px] font-medium`}>$921.48</Currency>
           </Container>
           <Container>
             <Logo />
           </Container>
         </Container>
-
     </Container>
   )
 }
