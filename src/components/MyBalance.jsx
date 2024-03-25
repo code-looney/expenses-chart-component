@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Container from './Container';
 import Title from './Title';
-import Currency from './currency';
+import Currency from './Currency';
 import Logo from './Logo';
 
 const MyBalance = () => {

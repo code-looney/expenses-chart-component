@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import TotalTitle from './TotalTitle';
 import Container from './Container';
-import Currency from './currency';
+import Currency from './Currency';
 import Percentage from './Percentage';
 import TotalSub from './TotalSub';
 
