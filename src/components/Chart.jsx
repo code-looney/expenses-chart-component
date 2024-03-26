@@ -35,7 +35,7 @@ const Chart = () => {
                             return (
                                 <li className={`text-[10px] h-[100%]`} key={index}>
                                     <div className={`flex flex-col h-[100%] items-center justify-end`}>
-                                        <div className={``}>{day.amount}</div> {/* make event */}
+                                        <div>{day.amount}</div> {/* make event */}
                                         <div className={`bg-black w-8 h-[${day.amount}%] rounded-sm`}></div>
                                         <div>{day.day}</div>
                                     </div>
