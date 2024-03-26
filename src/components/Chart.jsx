@@ -6,18 +6,18 @@ import Total from './Total';
 
 const Chart = () => {
     const [days, setDays] = useState();
+    const [amount, setAmount] = useState();
     const [mon, setMon] = useState();
     const [monAmount, setMonAmount] = useState();
-    const [amount, setAmount] = useState();
-    const height = ['h-[17%]']
-    // '34.91', '52.36', '31.07', '23.39', '43.28', '25.48', '23.39', 'h-[100%]
+    const height = ['h-[17.45%]', 'h-[34.91%]', 'h-[52.36%]', 'h-[31.07%]', 'h-[23.39%]', 'h-[43.28%]', 'h-[25.48%]', 'h-[23.39%]'];
 
     useEffect(() => {
         fetch(`./data.json`)
         .then(res => res.json())
         .then(data => {
-            setMon(data[0].day)
-            setMonAmount(JSON.stringify(data[0].amount))
+            setDays(data)
+            // setMon(data[0].day)
+            // setMonAmount(JSON.stringify(data[0].amount))
         })
     }, []) 
 
@@ -29,12 +29,21 @@ const Chart = () => {
             <ChartTitle className={`text-[26px] text-chart-font-color tracking-wide font-medium`}>Spending - Last 7 days</ChartTitle>
             <Container className={`h-[280px] gap-5 flex flex-col justify-end`}>                
                 <Container className={`outline flex items-end justify-center h-[100%]`}>
-                    <ul className={`flex flex-col justify-end items-center text-[12px] h-[100%] font-thin`}>
+                    <ul className={`flex justify-end items-center text-[12px] h-[100%] font-thin`}>
                          {/* {days && days.map(amount => <li>{console.log(amount.amount)}</li>)} */}
                         
-                         {mon &&  <li className='flex flex-col items-center'>{monAmount}</li>}
-                         <li className='bg-black w-8 h-[1%] rounded-sm'></li>
-                                    <li>{mon}</li>
+                         {days && days.map((day, index) => {
+                            return (
+                                <li key={index}>
+                                    <div>
+                                        <div className='flex flex-col items-center'>{monAmount}</div>
+                                        <div className={`bg-black w-8 h-[${monAmount}%] rounded-sm`}></div>
+                                        <div>{day.day}</div>
+                                    </div>
+                                </li>
+                            )
+                         })}
+
                     </ul>
                 </Container>
                 <Container>
