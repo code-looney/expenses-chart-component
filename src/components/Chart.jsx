@@ -7,6 +7,7 @@ import Total from './Total';
 const Chart = () => {
     const [days, setDays] = useState();
     const [amount, setAmount] = useState();
+    const [hover, setHover] = useState();
     const height = ['h-[17.45%]', 'h-[34.91%]', 'h-[52.36%]', 'h-[31.07%]', 'h-[23.39%]', 'h-[43.28%]', 'h-[25.48%]', 'h-[23.39%]'];
 
     useEffect(() => {
@@ -19,6 +20,20 @@ const Chart = () => {
             })
         })
     }, []) 
+
+
+    function handleGraphsAmountHover(index) {
+            setAmount(index)
+            setHover(index)
+            
+        }
+
+    function handleGraphsAmountLeave(index) {
+            setAmount('')
+            setHover('')
+            
+        }
+
 
     // { Avoid This Tailwind Mistake (Dynamic Classes) }
 
@@ -35,8 +50,8 @@ const Chart = () => {
                             return (
                                 <li className={`text-[10px] h-[100%]`} key={index}>
                                     <div className={`flex flex-col h-[100%] items-center justify-end`}>
-                                        <div>{day.amount}</div> {/* make event */}
-                                        <div className={`bg-black w-8 h-[${day.amount}%] rounded-sm`}></div>
+                                        <div onMouseLeave={() => handleGraphsAmountLeave(index)} onMouseEnter={() => handleGraphsAmountHover(index)}>{hover === index ? day.amount : ''}</div> {/* make event */}
+                                        <div onMouseLeave={() => handleGraphsAmountLeave(index)} onMouseEnter={() => handleGraphsAmountHover(index)} className={`bg-black ${hover === index ? 'bg-red-600' : ''} w-8 h-[${day.amount}%] rounded-sm`}></div>
                                         <div>{day.day}</div>
                                     </div>
                                 </li>
