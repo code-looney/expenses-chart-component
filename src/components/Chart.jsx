@@ -30,18 +30,17 @@ const Chart = () => {
             
         }
 
-    function handleGraphsAmountLeave(index) {
+    function handleGraphsAmountLeave() {
             setAmount('')
             setHover('')
             
         }
 
-
     // { Avoid This Tailwind Mistake (Dynamic Classes) }
 
   return (
-    <Container className={`bg-white h-96 rounded-xl grid place-content-center`}>
-        <Container className={`w-[320px] h-[340px] flex flex-col gap-3`}>
+    <Container className={`bg-white w-full h-96 rounded-xl grid place-content-center`}>
+        <Container className={`w-full h-[340px] flex flex-col gap-3`}>
             <ChartTitle className={`text-[26px] text-chart-font-color tracking-wide font-medium`}>Spending - Last 7 days</ChartTitle>
             <Container className={`h-[280px] gap-5 flex flex-col justify-end `}>                
                 <Container className={`flex items-end justify-center h-[100%]`}>
@@ -51,14 +50,14 @@ const Chart = () => {
                          {days && days.map((day, index) => {
                             return (
                                 <li className={`text-[10px] h-[100%] cursor-pointer`} key={index}>
-                                    <div className={`flex flex-col h-[100%] gap-1 items-center justify-end w-7`}>
-                                        <div className={`bg-black text-white text-[10px] font-semibold flex items-center justify-center rounded ${hover !== index ? 'hidden' : 'block w-11 h-8'}`} 
+                                    <div className={`flex flex-col h-[100%] gap-1 items-center justify-end w-7 md:w-9`}>
+                                        <div className={`bg-black text-white text-[10px] font-semibold flex items-center justify-center rounded ${hover !== index ? 'hidden' : 'block w-11 h-8'}`} // This is the currency
                                         onMouseLeave={() => handleGraphsAmountLeave(index)} 
                                         onMouseEnter={() => handleGraphsAmountHover(index)}>${day.amount}</div> {/* make event */}
                                         <div 
                                         onMouseLeave={() => handleGraphsAmountLeave(index)} 
                                         onMouseEnter={() => handleGraphsAmountHover(index)} 
-                                        className={`${index === 2 ? 'bg-graph hover:opacity-75 ' : 'bg-sub hover:opacity-75 '} w-8 h-[${day.amount}%] rounded`}></div>
+                                        className={`${index === 2 ? 'bg-graph hover:opacity-75 ' : 'bg-sub hover:opacity-75 '} w-8 md:w-10 h-[${day.amount}%] rounded`}></div>
                                         <div>{day.day}</div>
                                     </div>
                                 </li>
