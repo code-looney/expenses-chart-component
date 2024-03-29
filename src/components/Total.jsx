@@ -25,7 +25,7 @@ const Total = () => {
          <Container className={`flex justify-between`}>
             <Container>
                 <TotalTitle className={`text-[12px] font-thin`}>Total this month</TotalTitle>
-                <Currency className={`text-[31px] font-bold`}>${total}</Currency>
+                <Currency className={`text-[31px] font-bold`}>$ 478.33</Currency>
             </Container>
             <Container className={`flex flex-col justify-end`}>
                 <Container className={`flex justify-end`}>
