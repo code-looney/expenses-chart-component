@@ -14,7 +14,7 @@ const MyBalance = () => {
             <Currency className={`text-[24px] font-medium`}>$921.48</Currency>
           </Container>
           <Container>
-            <Logo />
+            <Logo src={`images/logo.svg`} alt={`logo`} />
           </Container>
         </Container>
     </Container>
